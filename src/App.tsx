@@ -1,34 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import DefaultLayout from './layouts/DefaultLayout';
+import HomePage from './pages/home/page';
+import './App.css';
+import TowerAPage from './pages/tower/tower-a';
+import TowerBPage from './pages/tower/tower-b';
+import TowerCPage from './pages/tower/tower-c';
+import TowerFloorAPage from './pages/tower/[floorId]';
+
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <DefaultLayout />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />
+      },
+      {
+        path: '/tower-a',
+        element: <TowerAPage />,
+      },
+
+      {
+        path: '/tower-b',
+        element: <TowerBPage />
+      },
+      {
+        path: '/tower-c',
+        element: <TowerCPage />
+      },
+      {
+        path: "/tower-a/:floorId",
+        element: <TowerFloorAPage />
+      },
+      {
+        path: "/tower-b/:floorId",
+        element: <TowerFloorAPage />
+      },
+      {
+        path: "/tower-c/:floorId",
+        element: <TowerFloorAPage />
+      },
+    ]
+  }
+]);
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <RouterProvider router={router} />
   )
 }
 

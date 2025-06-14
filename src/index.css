@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+  --color-grey-10: #3c3c3b;
+  --color-yellow-10: #ffdc58;
+
+  /* fonts */
+  --text-14: 14px;
+  --text-18: 18px;
+}
+
+
+.modal {
+  @apply fixed inset-0 overflow-hidden bg-black/30 grid place-items-center transition-all duration-200 ease-in-out;
+  z-index: 100;
+}
+
+.modal__body {
+  @apply h-full w-full md:w-[700px] bg-blue-50 relative overflow-y-scroll p-4;
+}
