@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { towerData } from '@/data/towerData';
 import TowerCard from '@/components/ui/TowerCard';
 
 const HomePage: React.FC = () => {
-
-  const [data, setData] = useState(towerData)
 
   return (
     <>
@@ -15,7 +13,7 @@ const HomePage: React.FC = () => {
       </section>
       <section className='mt-10'>
         <div className='w-full grid md:grid-cols-2 xl:grid-cols-3 gap-5'>
-          {data.map(item => (
+          {towerData.map(item => (
             <TowerCard key={item.id} item={item} />
           ))}
         </div>
