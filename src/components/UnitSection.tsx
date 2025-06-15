@@ -21,7 +21,7 @@ const UnitSection: React.FC<Props> = ({ floorItems, unitDetail }) => {
       <div className='grid md:grid-cols-2 gap-10 w-full lg:w-[600px] mx-auto'>
         {
           floorItems?.map(unit => (
-            <UnitCard key={unit.id} item={unit} unitDetail={unitDetail} />
+            <UnitCard key={unit.id} item={unit} />
           ))
         }
       </div>

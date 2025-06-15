@@ -10,7 +10,7 @@ const Modal: React.FC<ModalProps> = ({ item, close }) => {
   return (
     <div onClick={close} className='modal'>
       <div onClick={e => e.stopPropagation()} className='modal__body'>
-        <h1 className='text-2xl font-bold'>Floor Plan</h1>
+        <h1 className='text-2xl font-bold'>Floor Plan -- Unit {item.units}</h1>
         <div className='w-full border-4 border-gray-500 mt-10 shadow-md'>
           <img src="https://housedesigner.com/wp-content/uploads/2023/11/2-5-min-optimized.png" alt="floor plan" className='w-full h-[400px] object-cover' />
         </div>

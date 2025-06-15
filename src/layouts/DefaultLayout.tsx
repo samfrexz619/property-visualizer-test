@@ -36,7 +36,7 @@ const DefaultLayout: React.FC = () => {
           </ul>
         </nav>
       </header>
-      <main className='w-full bg-blue-50 py-16'>
+      <main className='w-full py-16'>
         <section className='w-full xl:w-[1200px] mx-auto min-h-[60vh] px-5 xl:px-0'>
           <Outlet />
         </section>
